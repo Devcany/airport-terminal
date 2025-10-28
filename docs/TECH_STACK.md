@@ -20,10 +20,44 @@
 - **Alternative:** Next.js → Rejected (no SSR needed for terminal)
 
 ### Styling
-**Tailwind CSS 3**
-- **Why:** Utility-first, fast prototyping, consistent design
-- **Alternative:** CSS Modules → Rejected (more boilerplate)
-- **Alternative:** Styled Components → Rejected (runtime cost)
+**CSS Modules**
+- **Why:** 
+  1. **B2B-Context:** Deutsche Firmen/Airports haben oft inhouse-Devs die CSS Modules kennen (Standard in Enterprise-React-Projekten)
+  2. **Wartbarkeit:** Andere Devs lesen CSS-File statt 50 Tailwind-Classes in JSX
+  3. **Team-Präferenz:** Craftsman bevorzugt Vanilla-CSS-Syntax über Utility-Classes
+  4. **Performance:** Nur genutztes CSS im Bundle, kein Tailwind-Compiler nötig
+  5. **Professionalität:** Cleaner JSX-Code, bessere Code-Reviews
+  6. **Zero Vendor-Lock:** Kein Framework-Dependency, einfache Migration falls nötig
+
+- **Alternative considered:** Tailwind CSS → Rejected (Classname-Spam, Dependenz, Team-Präferenz)
+- **Alternative considered:** Styled Components → Rejected (Runtime-Cost, Overkill)
+- **Alternative considered:** Vanilla CSS → Rejected (Global-namespace-Probleme)
+
+**Implementation:**
+```tsx
+// components/Button.tsx
+import styles from './Button.module.css';
+
+export const Button = ({ children, onClick }) => (
+  <button className={styles.primary} onClick={onClick}>
+    {children}
+  </button>
+);
+```
+```css
+/* components/Button.module.css */
+.primary {
+  width: 320px;
+  height: 320px;
+  background: var(--primary);
+  /* ... */
+}
+```
+
+**CSS Variables (globals.css):**
+- Colors, spacing, font-sizes als CSS-Custom-Properties
+- Import in index.css
+- Wiederverwendbar in allen Modules
 
 ### State Management
 **Zustand**
