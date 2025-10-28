@@ -1,0 +1,38 @@
+.button {
+  width: var(--touch-primary);
+  height: var(--touch-primary);
+  font-size: var(--text-body);
+  font-weight: bold;
+  border-radius: 24px;
+  border: none;
+  box-shadow: var(--shadow-lg);
+  transition: transform 100ms;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.primary {
+  background: var(--primary);
+  color: white;
+}
+
+.primary:hover:not(:disabled) {
+  background: #0052A3;
+}
+
+.secondary {
+  background: var(--gray-light);
+  color: var(--text);
+}

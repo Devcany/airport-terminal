@@ -1,0 +1,131 @@
+.screen {
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg);
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+}
+
+.backButton {
+  width: 96px;
+  height: 96px;
+  font-size: 40px;
+  background: var(--gray-light);
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  align-self: flex-start;
+  margin-bottom: var(--space-lg);
+}
+
+.backButton:active {
+  transform: scale(0.95);
+}
+
+.title {
+  font-size: var(--text-heading);
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.searchContainer {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto var(--space-xl);
+}
+
+.input {
+  width: 100%;
+  height: 128px;
+  padding: 0 32px;
+  font-size: 60px;
+  border: 4px solid #CCCCCC;
+  border-radius: 24px;
+  background: white;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.results {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  overflow-y: auto;
+}
+
+.resultCard {
+  padding: 32px;
+  background: white;
+  border: 4px solid #CCCCCC;
+  border-radius: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 100ms;
+}
+
+.resultCard:active {
+  transform: scale(0.98);
+}
+
+.flightInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.flightNumber {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.destination {
+  font-size: 48px;
+  color: var(--gray-dark);
+}
+
+.gateInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.gate {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.status {
+  font-size: 40px;
+}
+
+.on-time {
+  color: var(--success);
+}
+
+.delayed {
+  color: var(--error);
+}
+
+.boarding {
+  color: #FF8800;
+}
+
+.noResults {
+  font-size: 48px;
+  text-align: center;
+  color: var(--gray-dark);
+  margin-top: 96px;
+}

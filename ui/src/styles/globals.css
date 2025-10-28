@@ -1,0 +1,33 @@
+:root {
+  --primary: #0066CC;
+  --success: #00AA00;
+  --error: #CC0000;
+  --bg: #FFFFFF;
+  --text: #000000;
+  --gray-light: #F5F5F5;
+  
+  --touch-primary: 320px;
+  --text-heading: 96px;
+  --text-body: 48px;
+  --space-xl: 48px;
+  
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow: hidden;
+}
+
+button {
+  cursor: pointer;
+  user-select: none;
+}
